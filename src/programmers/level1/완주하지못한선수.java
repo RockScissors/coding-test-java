@@ -25,7 +25,7 @@ public class 완주하지못한선수 {
         }
     }
 
-    // 1. 변수명 개선 reduceCount -> remainCount, remaining
+    // 1. 변수명 개선 reduceCount -> remainCount, remaining, count
     // 2. containsKey + get 중복 조회
     // 3. count == -1 보다 count == 0 조건이 자연스러움
     // (4. completionMap -> completionCount, map)
@@ -39,9 +39,9 @@ public class 완주하지못한선수 {
             }
 
             for (String p : participant) {
-                Integer remainCount = map.get(p);
-                if (remainCount == null || remainCount == 0) return p;
-                map.put(p, remainCount - 1);
+                int count = map.getOrDefault(p, 0);
+                if (count == 0) return p;
+                map.put(p, count - 1);
             }
 
             return "";
