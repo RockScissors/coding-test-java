@@ -20,12 +20,4 @@ public class 이웃한칸 {
             return answer;
         }
     }
-
-
-
-    public static class OptimalSolution {
-        public int solution(String[][] board, int h, int w) {
-
-        }
-    }
 }
