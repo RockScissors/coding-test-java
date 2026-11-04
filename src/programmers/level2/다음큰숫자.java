@@ -33,7 +33,7 @@ public class 다음큰숫자 {
     }
 
     // Integer.toBinaryString(int) -> 정수를 2진수 문자열로 변환
-    // Integer.bitCount(int)
+    // Integer.bitCount(int) -> 정수의 이진수에서 1 개수 반환
 
     public static class OptimalSolution {
         public int solution(int n) {
@@ -53,6 +53,15 @@ public class 다음큰숫자 {
                 if (c == '1') count++;
             }
             return count;
+        }
+    }
+
+    public static class OptimalSolution2 {
+        public int solution(int n) {
+            int ones = Integer.bitCount(n);
+            int answer = n + 1;
+            while (Integer.bitCount(answer) == ones) answer++;
+            return answer;
         }
     }
 }
